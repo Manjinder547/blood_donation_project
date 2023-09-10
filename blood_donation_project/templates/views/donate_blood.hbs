@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Blood Donation Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div id="container">
+  {{> secret_nav}}
+  <h2>Please Enter the details below:</h2>
+  <form action="/donate_blood" method="POST">
+        <input type="text" name="d_name"
+            placeholder="donor name">
+        <input type="text" name="d_email"
+            placeholder="donor email">
+        <select name="d_blood_group" id="d_blood_group">
+          <option value="">--Please choose your blood group--</option>
+          <option>A+</option> 
+          <option>A-</option> 
+          <option>B+</option> 
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+        <input type="date" name="d_dob"
+            placeholder="date of birth">
+        <input type="text" name="d_address"
+            placeholder="address">
+        <input type="text" name="d_city"
+            placeholder="city">
+        <input type="text" name="d_province"
+            placeholder="province">
+        <input type="text" name="d_country"
+            placeholder="country">
+        <input type="text" name="d_phone_number"
+            placeholder="phone number">
+        <button>submit</button>
+    </form>
+  {{> footer}}
+  </div>
+</body>
+</html>

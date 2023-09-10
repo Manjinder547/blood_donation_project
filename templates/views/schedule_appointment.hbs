@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Blood Donation Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div id="container">
+  {{> secret_nav}}
+  <h2>You are eligible to donate blood. <br>
+      Please schedule your appointment.</h2>
+    <form action="/schedule_appointment" method="POST">
+        <select name="loc_select" id="loc_select" required>
+          <option value="">--Please choose an option--</option>
+          <option>Brampton</option> 
+          <option>North York</option> 
+          <option>Missisauga</option> 
+          <option>Vaughan</option>
+          <option>Scarborough</option>
+        </select>
+        <input type="date" name="date"
+            placeholder="date of appointment">
+        <input type="time" id="appt" name="appt" placeholder="time of appointment"
+        min="09:00" max="18:00" required>
+        <button>submit</button>
+    </form>
+  {{> footer}}
+  </div>
+</body>
+</html>
